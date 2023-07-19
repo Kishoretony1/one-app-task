@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container alert alert-warning alert-dismissible fade show" role="alert">
     <div class="row justify-content-center">
@@ -25,6 +24,5 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 
 </div>
-
 
 @endsection

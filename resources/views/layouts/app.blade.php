@@ -31,7 +31,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ url('/home') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
@@ -83,7 +83,32 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('scripts')
+            <script>
+                 $(document).ready(function($) {
+
+    // Type only number validation
+    $('#status').keypress(function(event) {
+    const isNumber =/^[0-9]+$/i.test(event.key);
+    if(!isNumber){
+        event.preventDefault();
+    }
+    return isNumber;
+});
+    //Type only Alphabets validation
+    $('#role_name').keypress(function(e) {
+    const isLetter = /^[a-zA-Z0 ]*$/i.test(e.key);
+    if(!isLetter){
+        e.preventDefault();
+    }
+    return isLetter;
+});
+
+ });
+            </script>
         </main>
+
     </div>
+
 </body>
 </html>
